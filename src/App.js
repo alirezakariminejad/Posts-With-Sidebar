@@ -1,6 +1,7 @@
 import React from "react";
-import IpInfo from "./Components/IpInfo";
+import BlogPost from './Components/BlogPost'
+
 
 export default function App() {
-  return <IpInfo />;
+  return <BlogPost />;
 }
