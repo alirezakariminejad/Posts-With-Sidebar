@@ -6,7 +6,7 @@ export default class Post extends Component {
   render() {
     return (
       <div className="container">
-        <Content />
+        <Content posts={this.props.posts} />
         <Comment />
       </div>
     );

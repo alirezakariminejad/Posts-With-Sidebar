@@ -7,7 +7,9 @@ export default class BlogPost extends Component {
     super(props);
     this.state = {
       data: null,
+      currentPost: null,
     };
+    this.handleChangeCurrentPost = this.handleChangeCurrentPost.bind(this);
   }
 
   async getPost() {
@@ -16,14 +18,18 @@ export default class BlogPost extends Component {
   }
 
   componentDidMount() {
-    this.getPost().then((data) => this.setState({ data }));
+    this.getPost().then((data) => this.setState({ data, currentPost: 0 }));
+  }
+
+  handleChangeCurrentPost(index) {
+    this.setState({ currentPost: index });
   }
 
   render() {
     return (
       <div id="root">
-        <Sidebar posts={this.state.data} />
-        <Post posts={this.state.data} />
+        <Sidebar posts={this.state.data} handleChangeCurrentPost={this.handleChangeCurrentPost} />
+        {null !== this.state.currentPost ? <Post posts={this.state.data[this.state.currentPost]} /> : null}
       </div>
     );
   }
