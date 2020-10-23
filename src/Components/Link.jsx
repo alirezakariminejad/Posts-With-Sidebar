@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Link(props) {
-    return (
-        <li>Title 1</li>
-    )
+  return <li>{props.title}</li>;
 }
