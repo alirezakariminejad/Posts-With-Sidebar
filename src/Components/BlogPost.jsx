@@ -29,7 +29,7 @@ export default class BlogPost extends Component {
     return (
       <div id="root">
         <Sidebar posts={this.state.data} handleChangeCurrentPost={this.handleChangeCurrentPost} />
-        {null !== this.state.currentPost ? <Post posts={this.state.data[this.state.currentPost]} /> : null}
+        {null !== this.state.currentPost ? <Post posts={this.state.data[this.state.currentPost]} index={this.state.currentPost} /> : null}
       </div>
     );
   }
